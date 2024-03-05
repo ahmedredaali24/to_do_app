@@ -167,6 +167,8 @@ class _CreateAccountState extends State<LoginScreen> {
       /// show loading
       DialogUtils.showLoading(
           context: context, massage: "Loading....", isDismissible: false);
+
+
       try {
         final credential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(
@@ -181,6 +183,7 @@ class _CreateAccountState extends State<LoginScreen> {
 
         /// hide loading
         DialogUtils.hideLoading(context);
+
 
         /// show message
         DialogUtils.showMessage(
