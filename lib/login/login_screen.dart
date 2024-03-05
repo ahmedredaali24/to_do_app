@@ -23,10 +23,10 @@ class LoginScreen extends StatefulWidget {
 
 class _CreateAccountState extends State<LoginScreen> {
   TextEditingController emailController =
-      TextEditingController(text: "ahmed@gmail.com");
+      TextEditingController(text: "");
 
   TextEditingController passwordController =
-      TextEditingController(text: "12356789");
+      TextEditingController(text: "");
 
   var formKey = GlobalKey<FormState>();
   late AppConfigProvider provider;

@@ -20,16 +20,16 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
-  TextEditingController nameController = TextEditingController(text: "ahmed");
+  TextEditingController nameController = TextEditingController(text: "");
 
   TextEditingController emailController =
-      TextEditingController(text: "ahmed@gmail.com");
+      TextEditingController(text: "");
 
   TextEditingController passwordController =
-      TextEditingController(text: "12356789");
+      TextEditingController(text: "");
 
   TextEditingController confirmPasswordController =
-      TextEditingController(text: "12356789");
+      TextEditingController(text: "");
 
   var formKey = GlobalKey<FormState>();
 
@@ -194,7 +194,7 @@ class _CreateAccountState extends State<CreateAccount> {
             title: "Success",
             posActionName: "ok",
             posAction: (context) {
-              Navigator.of(context).pushNamed(HomeScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
             });
         print("create good");
         print(credential.user?.uid ?? "");
