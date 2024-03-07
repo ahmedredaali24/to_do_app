@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_app/dialog_utils.dart';
 import 'package:to_do_app/firebase.dart';
-import 'package:to_do_app/home/home_screen.dart';
+import 'package:to_do_app/login/login_screen.dart';
 import 'package:to_do_app/login/text_form_field_widget.dart';
 import 'package:to_do_app/model/my_user.dart';
 import 'package:to_do_app/mt_theme.dart';
@@ -194,7 +194,7 @@ class _CreateAccountState extends State<CreateAccount> {
             title: "Success",
             posActionName: "ok",
             posAction: (context) {
-              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
             });
         print("create good");
         print(credential.user?.uid ?? "");

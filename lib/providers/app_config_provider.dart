@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-
 class AppConfigProvider extends ChangeNotifier {
   //data
   String appLanguage = "en";
@@ -37,14 +36,14 @@ class AppConfigProvider extends ChangeNotifier {
     String? lang = prefs.getString('language');
     if (lang == "en") {
       appLanguage = "en";
-    } else{
+    } else {
       appLanguage = "ar";
     }
 
     String? mode = prefs.getString('mode');
     if (mode == "dark") {
       appTheme = ThemeMode.dark;
-    } else{
+    } else {
       appTheme = ThemeMode.light;
     }
     notifyListeners();

@@ -34,16 +34,6 @@ class FirebaseUtils {
     return getTasksCollection(uId).doc(task.id).update({"isDone": true});
   }
 
-  static isDoneUpdate2(Task task, String uId) {
-    return getTasksCollection(uId).doc(task.id).update({"isDone": false});
-  }
-
-  static updateAllTasks(Task task,String uId){
-    return getTasksCollection(uId).doc(task.id).update({
-
-
-    });
-  }
 
   /// usersCollection
   static CollectionReference<MyUser> getUsersCollection() {

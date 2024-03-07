@@ -22,24 +22,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<LoginScreen> {
-  TextEditingController emailController =
-      TextEditingController(text: "");
+  TextEditingController emailController = TextEditingController(text: "");
 
-  TextEditingController passwordController =
-      TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
 
   var formKey = GlobalKey<FormState>();
   late AppConfigProvider provider;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //
-  //   WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-  //     provider = Provider.of<AppConfigProvider>(context, listen: false);
-  //     provider.getSaveDate();
-  //   });
-  // }
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      provider = Provider.of<AppConfigProvider>(context, listen: false);
+      provider.getSaveDate();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +166,6 @@ class _CreateAccountState extends State<LoginScreen> {
       DialogUtils.showLoading(
           context: context, massage: "Loading....", isDismissible: false);
 
-
       try {
         final credential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(
@@ -183,7 +180,6 @@ class _CreateAccountState extends State<LoginScreen> {
 
         /// hide loading
         DialogUtils.hideLoading(context);
-
 
         /// show message
         DialogUtils.showMessage(

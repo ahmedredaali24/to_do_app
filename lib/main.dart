@@ -27,8 +27,7 @@ void main() async {
   // await FirebaseFirestore.instance.disableNetwork();
 
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(
-        create: (context) => AppConfigProvider()..getSaveDate()),
+    ChangeNotifierProvider(create: (context) => AppConfigProvider()),
     ChangeNotifierProvider(create: (context) => ListProvider()),
     ChangeNotifierProvider(create: (context) => AuthProviders())
   ], child: const MyApp()));
