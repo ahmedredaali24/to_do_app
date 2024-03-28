@@ -13,7 +13,7 @@ class AppConfigProvider extends ChangeNotifier {
     }
     appLanguage = newLanguage;
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString("language", appLanguage);
+    await prefs.setString("language", newLanguage);
     notifyListeners();
   }
 
@@ -23,7 +23,7 @@ class AppConfigProvider extends ChangeNotifier {
     }
     appTheme = newMode;
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString("mode", appTheme.name);
+    await prefs.setString("mode", newMode.name);
     notifyListeners();
   }
 
